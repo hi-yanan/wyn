@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="job-13.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1164891_eeml9bm0il8.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1164891_oy4dpluk1rg.css">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .clearfix::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    ul {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    .layout {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .width {
+        width: 700px;
+        margin: 0 auto;
+    }
+    header {
+        background: url(data:image/jpeg;base64,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) center center no-repeat;
+        background-size: cover;
+        min-height: 750px;
+    }
+    header .navbar .logo {
+        display: inline-block;
+        font-size: 32px;
+        color: #e76d35;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 30px;
+    }
+    header .navbar ul {
+        float: right;
+        margin-right: 100px;
+    }
+    header .navbar ul > li {
+        float: left;  
+        margin: 25px; 
+    }
+    header .navbar li a {
+        display: inline-block;
+        font-size: 14px;
+        color: #e67d5d;
+        padding: 5px;  
+    }
+    .button {
+         /* display: inline-block; */
+        font-size: 16px;
+        background-color: red;
+        padding: 10px;
+        border-radius: 3px;
+        opacity: .4;
+        margin-top: 40px;
+}
+    .button:hover {
+        color: #fff;
+        background-color: red;
+        border-radius: 4px;
+    }
+    header .intro {
+        margin-top: 60px;
+        line-height: 60px;
+        color: #fff;
+        text-align: center;
+    }
+    header .intro .button:hover {
+        opacity: .6;
+    }
+    header h2 {
+        font-size: 36px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    header h1 {
+        font-size: 48px;
+        margin: 20px 0;
+    }
+    section {
+        text-align: center;
+    }
+    section h2 {
+        font-size: 45px;
+        margin-top: 150px;
+    }
+    section > p {
+        margin-top: 30px; 
+        color: #999;
+    }
+    section ul {
+        margin-top: 100px;
+    }
+    section > ul > li {
+        float: left;
+        width: 33.33%;
+        padding: 10px 20px;
+    }
+    section #name {
+        font-size: 40px;
+        border: 8px solid pink;
+        border-radius: 50%;
+        color: #999;
+        background-color: pink;
+    }
+    section li h2 {
+        font-size: 16px;
+        margin-top: 50px;
+    }
+    section .family figure {
+        width: calc(33.33% - 20px);
+        margin: 50px 10px;
+        float: left;
+    }
+    section .family a {
+        display: inline-block;
+        height: 180px;
+    }
+    section .family img {
+        height: 100%;
+        width: 100%;
+    }
+    section .family {
+        margin-top: 70px;
+    }
+    section .family figcaption {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    section .family a:hover {
+        background: red;
+        opacity: .5;
+    }
+    section .timeline img,
+    section .timeline .img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid grey;
+        float: right;
+    }
+    section .timeline li {
+        margin-top: 150px;
+        padding-right: calc(50% - 50px);
+        text-align: right;
+        position: relative;
+    }   
+    section .timeline li::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    section .timeline dl {
+        margin-right: 120px;
+    }
+    section .timeline dt {
+        font-weight: bold;
+    }
+    section .timeline li:nth-child(odd) {
+        margin-top: 150px;
+        padding-right: calc(50% - 50px);
+        text-align: right;        
+    }
+    section .timeline li:nth-child(odd) dl {
+        margin-right: 120px;;
+    }
+    section .timeline li:nth-child(odd) img {
+        float: right;
+    }
+    section .timeline li:nth-child(even) {
+        padding-left: calc(50% - 50px);
+        text-align: left;
+    }
+    section .timeline li:nth-child(even) dl {
+        margin-left: 120px;
+        width: 500px;
+    }
+    section .timeline li:nth-child(even) img {
+        float: left;  
+    }
+    section .timeline dd:nth-of-type(1) {
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    section .timeline li::before {
+        content: '';
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        display: inline-block;
+        width: 5px;
+        height: 200px;
+        background-color: grey;
+    }
+    section .timeline li:last-child::before {
+        height: 0;
+    }
+    section .timeline .img {
+        font-size: 14px;
+        color: #fff; 
+        background-color: grey;
+        padding-top: 25px;
+        padding-left: 5px; 
+    }
+
+    section .pic {
+        margin-top: 200px;
+    }
+    section .pic h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    section .pic ul li {
+        float: left;
+        width: calc(33.33% - 20px);
+    }
+    section .pic img {
+        border-radius: 50%;
+    }
+    section .pic h3 {
+        margin-top: 50px;
+    }
+    section .pic p {
+        color: #999;
+        font-family: Georgia, 'Times New Roman', Times, serif; 
+        margin-bottom: 20px;
+    }
+    #sea {
+        display: inline-block;
+        font-size: 20px;
+        color: #fff;
+        background-color: #666;
+        border-radius: 50%;
+        border: 10px solid #666;
+        margin: 0 5px;
+    }
+    #sea:hover {
+        background-color: #fed136;
+        border: 10px solid #fed136; 
+    }
+    section .pic .one {
+        text-align: center;
+        margin-top: 50px;
+    }
+    section .company ul li {
+        float: left;
+        width: calc(25% - 20px);
+        margin-top: 80px; 
+    }
+    footer {
+        background: url(http://pic53.nipic.com/file/20141116/17961491_152914969000_2.jpg) center center no-repeat;
+        background-size: cover;
+        min-height: 750px;
+        margin-top: 50px; 
+    }
+    footer h1 {
+        text-align: center;
+        padding-top: 100px;
+        font-size: 52px;
+        color: #fff;
+    }
+    footer p {
+        text-align: center;
+        color: #fff;
+        margin-top: 20px;
+    }
+    footer a {
+        display: inline-block;
+        margin-left: 45%;
+    }
+    footer .left {
+        width: 580px;
+        height: 200px;
+        /* background-color: #fff; */
+        float: left;
+    }
+    footer .right {
+        width: 580px;
+        height: 200px;
+        /* background-color: #fff; */
+        float: right;
+    }
+    footer .box {
+        margin-top: 80px;
+    }
+    footer .input {
+        display: block;
+        width: 100%;
+        height: 50px;
+        margin-bottom: 25px;
+        border-radius: 3px;
+        border: 0;
+        padding: 20px;
+    }
+    footer textarea {
+        width: 580px;
+        height: 200px;
+        display: block;
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+    .fina {
+        width: 1100px;
+        margin: 0 auto;
+    }
+    .fina li {
+       float: left; 
+       width: calc(33.33% - 30px);
+       text-align: center;
+       padding: 30px 0;
+    }
+    .fina .p {
+        font-size: 14px;
+    }
+    .fina .special {
+        color: #fed136;
+    }
+</style> 
+<body>
+<header>
+    <div class="navbar clearfix">
+        <a class="logo" href="#">Take a Trip</a>
+        <ul class="nav">
+            <li class="nav"><a href="#">SERVICES</a></li>
+            <li class="nav"><a href="#">PORTFOLIO</a></li>
+            <li class="nav"><a href="#">ABOUT</a></li>
+            <li class="nav"><a href="#">TEAM</a></li>
+            <li class="nav"><a href="#">CONTACT</a></li>
+        </ul>
+        <div class="intro">
+            <h2>Look at the world,</h2>
+            <h1>GO ON A TRIP AT ANY TIME!</h1>
+            <a class="button" href="#">TELL ME MORE</a>
+        </div>
+    </div>
+</header>
+
+<main  class="layout">
+    <section>
+        <h2>Travel information</h2>
+        <p>zxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzx</p>
+        <ul class="clearfix">
+            <li>
+                <span class="iconfont icon-eyes" id="name"></span>
+                <h2>命名规范</h2>
+                <p>命名是功能的描述，如果不知道如何命名，把你能想到的中文名字翻译成看着最顺眼的英文</p>
+            </li>
+            <li>
+                <span class="iconfont icon-beauty" id="name"></span>
+                <h2>命名规范</h2>
+                <p>对于功能复杂的命名，可使用”是什么-什么特性”的命名方式，如”text-lesser”代表样式地位更轻一点的文本，”dialog-open”代表打开了的弹窗</p>
+            </li>
+            <li>
+                <span class="iconfont icon-eyes" id="name"></span>
+                <h2>命名规范</h2>
+                <p>可充分利用语意化标签，配合直接子元素选择器去定位元素，省去一部分元素的命名</p>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>FAMILY</h2>
+        <p>zzzzzzzzxxxxxxxxxxcccccccccccvvvvvvvvvvbbbbbbbbnnnnnnnnmmmmmmmmmmm</p>
+        <div class="family clearfix">
+            <figure>
+                <a href="#"><img src="http://pic1.win4000.com/wallpaper/f/5667f851718ac.jpg" alt=""></a>
+                <figcaption>BLUE SKY</figcaption>
+                <p>blue blue blue blue blue blue blue blue blue blue</p>
+            </figure>
+            <figure>
+                <a href="#"><img src="http://pic1.win4000.com/wallpaper/f/5667f851718ac.jpg" alt=""></a>
+                <figcaption>BLUE SKY</figcaption>
+                <p>blue blue blue blue blue blue blue blue blue blue</p>
+            </figure>
+            <figure>
+                <a href="#"><img src="http://pic1.win4000.com/wallpaper/f/5667f851718ac.jpg" alt=""></a>
+                <figcaption>BLUE SKY</figcaption>
+                <p>blue blue blue blue blue blue blue blue blue blue</p>
+            </figure>
+            <figure>
+                <a href="#"><img src="http://pic1.win4000.com/wallpaper/f/5667f851718ac.jpg" alt=""></a>
+                <figcaption>BLUE SKY</figcaption>
+                <p>blue blue blue blue blue blue blue blue blue blue</p>
+            </figure>
+            <figure>
+                <a href="#"><img src="http://pic1.win4000.com/wallpaper/f/5667f851718ac.jpg" alt=""></a>
+                <figcaption>BLUE SKY</figcaption>
+                <p>blue blue blue blue blue blue blue blue blue blue</p>
+            </figure>
+            <figure>
+                <a href="#"><img src="http://pic1.win4000.com/wallpaper/f/5667f851718ac.jpg" alt=""></a>
+                <figcaption>BLUE SKY</figcaption>
+                <p>blue blue blue blue blue blue blue blue blue blue</p>
+            </figure>
+        </div>
+    </section>
+    <section>
+        <h2>ABOUT</h2>
+        <p>zzzzzzzxxxxxxxxxxxccccccccccvvvvvvvvvvvbbbbbbbbbbbbbbnnnnnnnnnnnnnmmmmmmmmmm</p>
+    <div class="timeline">
+        <ul>
+            <li>
+                <img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/about/1.jpg" alt="">
+                <dl>
+                    <dt>2009-2011</dt>
+                    <dd>Our Humble Beginnings</dd>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+                </dl>
+            </li>
+            <li>
+                <img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/about/1.jpg" alt="">
+                <dl>
+                    <dt>2009-2011</dt>
+                    <dd>Our Humble Beginnings</dd>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+                </dl>
+            </li>
+            <li>
+                <img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/about/1.jpg" alt="">
+                <dl>
+                    <dt>2009-2011</dt>
+                    <dd>Our Humble Beginnings</dd>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+                </dl>
+            </li>
+            <li>
+                <img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/about/1.jpg" alt="">
+                <dl>
+                    <dt>2009-2011</dt>
+                    <dd>Our Humble Beginnings</dd>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+                </dl>
+            </li>
+            <li>
+                <img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/about/1.jpg" alt="">
+                <dl>
+                    <dt>2009-2011</dt>
+                    <dd>Our Humble Beginnings</dd>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+                </dl>
+            </li>
+            <li>
+                <span class="img">BE PART OF OUR STORY!</span>
+            </li>
+        </ul>
+    </div>
+    </section>
+    <section>
+    <div class="pic">
+        <h1>SCENIC BEAUTY</h1>
+        <P>The beautiful scenery always makes people linger over</P>
+            <ul class="clearfix">
+                <li>
+                    <img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/about/1.jpg" alt="">
+                    <h3>sea of flowers</h3>
+                    <p>beautiful</p>
+                    <a class="iconfont icon-facebook" id="sea" href="#"></a>
+                    <a class="iconfont icon-linkedin" id="sea" href="#"></a>                    
+                    <a class="iconfont icon-twitter" id="sea" href="#"></a>
+                </li>
+                <li>
+                    <img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/about/1.jpg" alt="">
+                    <h3>sea of flowers</h3>
+                    <p>beautiful</p>
+                    <a class="iconfont icon-facebook" id="sea" href="#"></a>
+                    <a class="iconfont icon-linkedin" id="sea" href="#"></a>                    
+                    <a class="iconfont icon-twitter" id="sea" href="#"></a>
+                </li>
+                <li class="fr">
+                    <img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/about/1.jpg" alt="">
+                    <h3>sea of flowers</h3>
+                    <p>beautiful</p>
+                    <a class="iconfont icon-facebook" id="sea" href="#"></a>
+                    <a class="iconfont icon-linkedin" id="sea" href="#"></a>                    
+                    <a class="iconfont icon-twitter" id="sea" href="#"></a>
+                </li>
+            </ul>
+            <p class="one width">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+    </div>
+    </section>   
+    <section>
+    <div class="company clearfix">
+        <ul>
+            <li>
+                <a href="#"><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/logos/envato.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/logos/themeforest.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/logos/designmodo.jpg" alt=""></a>
+            </li>          
+            <li>
+                <a href="#"><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/logos/creative-market.jpg" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    </section>
+</main>
+<footer>
+    <div class="layout">
+    <h1>LEAVE A MESSAGE</h1>
+    <P>Please leave the information below</P>
+    <div class="box">
+    <form>
+    <div class="left clearfix">
+        <input type="text" class="input" placeholder="YOUR NAME*" id="name">
+        <input type="text" class="input" placeholder="YOUR PHONE*" id="tel">
+        <input type="text" class="input" placeholder="YOUR E-MAIL*" id="e-mail">
+    </div>
+    <div class="right clearfix">
+        <textarea  class="" name="" id="message" cols="30" rows="10" placeholder="Please Enter Content"></textarea>
+    </div>
+    <a class="button" href="#">PUT IN MORE</a>
+    </form>
+    </div>
+    </div>
+</footer>
+    <div class="fina">
+        <ul>
+            <li class="p">Copyright © Your Website 2014</li>
+            <li>
+                <a class="iconfont icon-facebook" id="sea" href="#"></a>
+                <a class="iconfont icon-linkedin" id="sea" href="#"></a>                    
+                <a class="iconfont icon-twitter" id="sea" href="#"></a>
+            </li>
+            <li class="p special">Privacy Policy | Terms of Use</li>
+        </ul>
+    </div>
+
+</body>
+</html>
